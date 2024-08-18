@@ -10,8 +10,7 @@ import Product from "./pages/Product";
 
 function App() {
   return (
-    <Box className="App" display="flex" flexDirection="column" alignItems="center" justifyContent="center" minHeight="100vh">
-      <h1>LCMTECH</h1>
+    <Box className="App" display="flex" flexDirection="column" alignItems="center" justifyContent="center">
       <BrowserRouter>
         <NavBar />
         <Routes>

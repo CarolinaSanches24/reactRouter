@@ -7,6 +7,7 @@ import {
   Text,
   CardFooter,
   SimpleGrid,
+  Box
 } from "@chakra-ui/react";
 
 import {Link} from 'react-router-dom';
@@ -16,14 +17,12 @@ const Home = () => {
   const { data: items, error } = useFetch(url);
 
   return (
-    <div>
-      <h1>Produtos</h1>
-      {/** Se tiver erro, imprima o erro */}
+    <Box marginTop="15vh">
       {error && <p>{error}</p>}
-      <SimpleGrid columns={[1, 2, 3]} spacing="4">
+      <SimpleGrid columns={[1, 2, 3]} spacing="4" width="180vh" height="50vh">
         {items &&
           items.map((item) => (
-            <Card key={item.id}>
+            <Card key={item.id} textAlign="center">
               <CardHeader>
                 <Heading size="md">{item.name}</Heading>
               </CardHeader>
@@ -36,7 +35,7 @@ const Home = () => {
             </Card>
           ))}
       </SimpleGrid>
-    </div>
+    </Box>
   );
 };
 

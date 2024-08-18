@@ -17,3 +17,19 @@ npm install json-server@0.17.0
 npm create vite@latest
 ```
 rafce => criar componente
+
+
+### Install  React Router Dom
+
+```shell
+ pnpm i react-router-dom
+```
+
+### Config script server
+
+```json
+  "scripts": {
+    "server":"json-server --watch data/db.json"
+  },
+```
+

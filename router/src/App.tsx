@@ -1,24 +1,26 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import {Box} from "@chakra-ui/react";
+
 import "./App.css";
 import Home from "./pages/Home";
 import About from "./pages/About";
 
-// 2 - adicionando links
-// components
 import NavBar from "./components/NavBar";
+import Product from "./pages/Product";
 
 function App() {
   return (
-    <div className="App">
-      <h1>React Router</h1>
+    <Box className="App" display="flex" flexDirection="column" alignItems="center" justifyContent="center" minHeight="100vh">
+      <h1>LCMTECH</h1>
       <BrowserRouter>
         <NavBar />
         <Routes>
           <Route path="/" element={<Home />}></Route>
           <Route path="/about" element={<About />}></Route>
+          <Route path="/products/:id" element={<Product/>}/>
         </Routes>
       </BrowserRouter>
-    </div>
+    </Box>
   );
 }
 

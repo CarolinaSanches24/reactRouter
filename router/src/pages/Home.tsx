@@ -9,6 +9,8 @@ import {
   SimpleGrid,
 } from "@chakra-ui/react";
 
+import {Link} from 'react-router-dom';
+
 const Home = () => {
   const url: string = "http://localhost:3000/products";
   const { data: items, error } = useFetch(url);
@@ -27,6 +29,7 @@ const Home = () => {
               </CardHeader>
               <CardBody>
                 <Text>{item.price}</Text>
+                <Link to={`/products/${item.id}`}>Detalhes</Link>
               </CardBody>
               <CardFooter>
               </CardFooter>

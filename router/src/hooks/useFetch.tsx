@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { Product } from "../entity/product";
 
-
 type ConfigData = Record<string, unknown>;
 
 type Method = "POST" | "GET" | "PUT" | "DELETE";

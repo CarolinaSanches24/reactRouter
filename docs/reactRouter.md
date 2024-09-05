@@ -33,3 +33,8 @@ rafce => criar componente
   },
 ```
 
+#### Nested routes -> urls mais complexas, como:
+/products/:id/something;
+
+#### No match route (404)
+Definir o path como *

@@ -8,18 +8,22 @@ import About from "./pages/About";
 import NavBar from "./components/NavBar";
 import Product from "./pages/Product";
 import Info from "./pages/Info";
+import NotFound from "./pages/NotFound";
+import SearchForm from "./components/SearchForm";
 
 function App() {
   return (
     <Box className="App" display="flex" flexDirection="column" alignItems="center" justifyContent="center">
       <BrowserRouter>
         <NavBar />
+        <SearchForm/>
+       
         <Routes>
           <Route path="/" element={<Home />}></Route>
           <Route path="/about" element={<About />}></Route>
           <Route path="/products/:id/info" element={<Info/>}/>
           <Route path="/products/:id" element={<Product/>}/>
-          
+          <Route path="*" element={<NotFound/>}/>
         </Routes>
       </BrowserRouter>
     </Box>

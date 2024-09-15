@@ -4,7 +4,6 @@ import { useFetch } from "../hooks/useFetch";
 
 const Product = () => {
     const {id} = useParams();
-    // 5 - Carregamento de dado individual
     const url: string = 'http://localhost:3000/products/'+id;
     const {data:product, error, loading} = useFetch(url);
 

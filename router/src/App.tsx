@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import {Box} from "@chakra-ui/react";
 
 import "./App.css";
@@ -26,6 +26,7 @@ function App() {
           <Route path="/products/:id" element={<Product/>}/>
           <Route path="*" element={<NotFound/>}/>
           <Route path="/search" element={<Search/>}/>
+          <Route path="/company" element={<Navigate to ="/about"/>}/>
         </Routes>
       </BrowserRouter>
     </Box>

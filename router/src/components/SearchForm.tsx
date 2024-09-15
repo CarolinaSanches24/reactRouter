@@ -14,7 +14,7 @@ const SearchForm = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-        <HStack>
+        <HStack marginTop="15vh">
             <Input onChange={(e)=>setQuery(e.target.value)} 
             type="text" placeholder="Pesquisar por ..."></Input>
             <Button type="submit">Buscar</Button>

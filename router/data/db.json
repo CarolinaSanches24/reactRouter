@@ -2,18 +2,21 @@
     "products":[
         {
             "id":1,
-            "name":"Camisa",
-            "price":19.99
+            "name":"Camisa Infantil",
+            "price":19.99,
+            "imageSrc":"camisas/1.png"
         },
         {
             "id":2,
-            "name":"Short",
-            "price":29.99
+            "name":"Bermuda masculina Naruto Shippuden",
+            "price":29.99,
+            "imageSrc":"Bermudas/1.jpg"
         },
         {
             "id":3,
-            "name":"Calça",
-            "price":39.99
+            "name":"Calça de moletom anime Tanjirou",
+            "price":39.99,
+            "imageSrc":"Calças/1.jpg"
         }
     ]
 }

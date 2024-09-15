@@ -7,14 +7,18 @@ import {
   Text,
   CardFooter,
   SimpleGrid,
-  Box
+  Box,
+  Image
 } from "@chakra-ui/react";
 
 import {Link} from 'react-router-dom';
+import { ProductDTO } from "../entity/product";
+import { getImageUrl } from "../utils/getImage";
+
 
 const Home = () => {
   const url: string = "http://localhost:3000/products";
-  const { data: items, error } = useFetch(url);
+  const { data: items, error } = useFetch<ProductDTO>(url);
 
   return (
     <Box marginTop="15vh">
@@ -25,6 +29,7 @@ const Home = () => {
             <Card key={item.id} textAlign="center">
               <CardHeader>
                 <Heading size="md">{item.name}</Heading>
+                <Image   boxSize="300px" objectFit="contain" src={getImageUrl(item.imageSrc)}/>
               </CardHeader>
               <CardBody>
                 <Text>{item.price}</Text>

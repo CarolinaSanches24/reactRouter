@@ -9,7 +9,7 @@ export const Search = () => {
   const query = searchParams.get("q"); 
   const url: string = `http://localhost:3000/products${query ? `?q=${query}` : ''}`; 
 
-  const { data: items, loading, error } = useFetch<ProductDTO[]>(url); 
+  const { data: items, loading, error } = useFetch<ProductDTO>(url); 
 
   if (loading) return <Text>Loading...</Text>;
   if (error) return <Text>{error}</Text>;
@@ -17,7 +17,7 @@ export const Search = () => {
   return (
     <HStack spacing={4}>
       <Text>Resultados disponíveis:</Text>
-      <Box marginTop="15vh">
+      <Box marginTop="15vh" backgroundColor="blue.500">
         <SimpleGrid columns={[1, 2, 3]} spacing="4" width="100%" height="auto">
           {items && items.map((item) => (
             <Card key={item.id} textAlign="center">

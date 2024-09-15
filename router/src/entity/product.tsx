@@ -1,5 +1,6 @@
-export interface ProductDTO{
-    id: number|null;
+export interface ProductDTO {
+    id: number;
     name: string;
     price: number;
- }
+    imageSrc:string;
+  }

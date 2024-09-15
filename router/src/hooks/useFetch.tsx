@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+
 type ConfigData = Record<string, unknown>;
 
 type Method = "POST" | "GET" | "PUT" | "DELETE";
@@ -11,8 +12,8 @@ type FetchConfig = {
   body?: string;
 } | null;
 
-export const useFetch = <T,>(url: string) => { 
-  const [data, setData] = useState<T | null>(null);
+export const useFetch = <T,>(url: string) => {
+  const [data, setData] = useState<T[]>([]);
   const [config, setConfig] = useState<FetchConfig>(null);
   const [method, setMethod] = useState<Method | null>(null);
   const [callFetch, setCallFetch] = useState(false);
@@ -48,6 +49,9 @@ export const useFetch = <T,>(url: string) => {
       setLoading(true);
       try {
         const res = await fetch(url);
+        if (!res.ok) {
+          throw new Error('Network response was not ok');
+        }
         const json = await res.json();
         setData(json);
 
